@@ -24,25 +24,25 @@ void printTripsWithCosts();
 void findShortestPath();
 
 int main() {
-    cout << "Welcome to the Travel Planner!\n\n";
+    cout << "Solar Marketing Travel Planner \n";
 
-    // Step 1: Show distances
-    cout << "Distance Chart (Cities):\n";
-    printMatrix();
+//    Option to display adjacency Matrix
+//    cout << "Distance Chart (Cities):\n";
+//    printMatrix();
 
     // Step 2: Show trip options
-    cout << "\nAll Possible Trips from Riverside:\n";
+    cout << "\nPossible Trips from Riverside:\n";
     printTripsWithCosts();
 
     // Step 3: Show shortest trip
-    cout << "\nFinding the Shortest Trip:\n";
+    cout << "\nShortest Trip:\n";
     findShortestPath();
 
     return 0;
 }
 
 /************************************************/
-/*             Helper Functions                 */
+/*                 Functions                    */
 /************************************************/
 
 void printMatrix() {
@@ -54,7 +54,7 @@ void printMatrix() {
     }
 }
 
-// Calculate total distance of a trip
+// Calculate distance
 int calculateTripCost(const int trip[], int size) {
     int totalCost = 0;
     for (int i = 0; i < size - 1; i++) {
@@ -64,7 +64,7 @@ int calculateTripCost(const int trip[], int size) {
     return totalCost;
 }
 
-// Show all trips and their distances 
+// Show trips and distances 
 void printTripsWithCosts() {
     int trip[NUM_CITIES] = {0, 1, 2, 3}; // Indices of cities
     do {
@@ -80,7 +80,7 @@ void printTripsWithCosts() {
     } while (next_permutation(trip + 1, trip + NUM_CITIES)); // Keep Riverside at the start
 }
 
-// Find and show the shortest trip
+// Find shortest trip
 void findShortestPath() {
     int trip[NUM_CITIES] = {0, 1, 2, 3};
     int bestTrip[NUM_CITIES + 1];
