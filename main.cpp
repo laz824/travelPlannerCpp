@@ -24,11 +24,11 @@ void printTripsWithCosts();
 void findShortestPath();
 
 int main() {
-    cout << "Solar Marketing Travel Planner \n";
+    cout << "Solar Marketing Travel Planner \n\n";
 
 //    Option to display adjacency Matrix
-//    cout << "Distance Chart (Cities):\n";
-//    printMatrix();
+    cout << "Distance Chart (Cities):\n";
+    printMatrix();
 
     // Step 2: Show trip options
     cout << "\nPossible Trips from Riverside:\n";
