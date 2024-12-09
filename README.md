@@ -1,4 +1,4 @@
-# Group - F: Advanced Travel Planner Solutions
+### Travel Planner
 
 ---
 
@@ -82,59 +82,59 @@
 
 ### Matrix Operations:
 
-- The use of the adjacency matrix enhances the retrieval and computation of distances.Who has the ability to do these kinds of things?
+- The use of the adjacency matrix enhances the retrieval and computation of distances. Who has the ability to do these kinds of things?
 
 ---
 
 ## What are the limitations of the program?
 
-1. **Scalability**:
+1.  **Scalability**:
 
-   - For an increased amount of cities, the brute force method incurs a very high computation cost because of its factorial nature.
+    - For an increased amount of cities, the brute force method incurs a very high computation cost because of its factorial nature.
 
-2. **Static Input**:
+2.  **Static Input**:
 
-   - The adjacency matrix is static; the position of the cities and distance between them cannot be entered by the user.
+    - The adjacency matrix is static; the position of the cities and distance between them cannot be entered by the user.
 
-3. **Real-Time Factors**:
+3.  **Real-Time Factors**:
 
-   - This program does not take into account real time factors like for instance, the road traffic, or conditions of the roads.
+    - This program does not take into account real time factors like for instance, the road traffic, or conditions of the roads.
 
-4. **Optimization Criteria**:
-   - Only the distance field is optimized by calculation; time, or cost factors are excluded.
+4.  **Optimization Criteria**:
+    - Only the distance field is optimized by calculation; time, or cost factors are excluded.
 
 ---
 
 ## Recommendations on improving the limitations of the program
 
-1. **Scalability**:
+1.  **Scalability**:
 
-   - Make use of better optimization like Dijkstra’s or A\* algorithms to be able to accommodate bigger graphs.
+    - Make use of better optimization like Dijkstra’s or A\* algorithms to be able to accommodate bigger graphs.
 
-2. **Dynamic Input**:
+2.  **Dynamic Input**:
 
-   - Users should have the ability to flexibly input cities, distance and other relevant parameters.
+    - Users should have the ability to flexibly input cities, distance and other relevant parameters.
 
-3. **Real-Time Data Integration**:
+3.  **Real-Time Data Integration**:
 
-   - Make use of APIs or data that consider real time factors like road or traffic conditions.
+    - Make use of APIs or data that consider real time factors like road or traffic conditions.
 
-4. **Multi-Criteria Optimization**:
-   - Supplement the program so that it optimizes more than one parameter atu the same time, (distance-, cost-, time-) among other factors.
+4.  **multi-criteria Optimization**:
+    - Supplement the program so that it optimizes more than one parameter at the same time, (distance-, cost-, time-) among other factors.
 
 ---
 
 ## Pseudocode
 
-**PROGRAM START**;
+**PROGRAM START**
 
-- Create and set up an adjacency matrix to store the distance between cities;
-- Create and set an array that stores the names of the cities;
-- Set the adjacency matrix and the city names;
+- Create and set up an adjacency matrix to store the distance between cities.
+- Create and set an array that stores the names of the cities.
+- Set the adjacency matrix and the city names.
 - Display the distance of the city required by the user.
 - Display the matrix set up in the previous steps.
 - Create an array that will store the index of the city.
-- Assign the value of the city indices array to [0, 1, 2, 3];
+- Assign the value of the city indices array to [0, 1, 2, 3].
 - Compute every variation of a trip required by the user.
 - Fix all assignments of the array permutations of city indices beginning from Riverside.
 - Show all variations of the trip computed previously.
@@ -143,6 +143,6 @@
 - Get the shortest trip possible and its distance.
 - Display the trip that required the least amount of travel distance and total distance.
 
-**END OF THE PROGRAM**;
+**END OF THE PROGRAM**
 
 ---
