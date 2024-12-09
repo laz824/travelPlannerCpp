@@ -6,9 +6,9 @@
 
 - The marketing route across the four cities faces a problem of optimization and minimizing the overall distance spent in. This project addresses that issue.
 
-• In this project, an existing problem of finding the most efficient way of calculating total routes in a given distance will be resolved.
+- In this project, an existing problem of finding the most efficient way of calculating total routes in a given distance will be resolved.
 
-• By offering an adjacency matrix which calculates various route designs, this project will assist in the difficulty of planning out various distance routes between multiple cities.
+- By offering an adjacency matrix which calculates various route designs, this project will assist in the difficulty of planning out various distance routes between multiple cities.
 
 ---
 
@@ -21,7 +21,7 @@
 - The locations in the city are able to determine the shortest route through brute-force comparison and manage to find out the total distance taken.
 
 - **The system outputs:**
-  1. The most economical route and its selected total distance.
+- The most economical route and its selected total distance.
 
 ---
 
