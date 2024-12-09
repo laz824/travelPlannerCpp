@@ -16,12 +16,12 @@
 
 - A core part of the program is the adjacency matrix which collates distance metrics between each city.
 
-- Searching for alternative ways to start and conclude up – a location enables permutation generation to search up all routes traversing through Riverside.
+- Searching for alternative ways to start and conclude a location enables permutation generation to search up all routes through Riverside.
 
-- The locations in the city are able to determine the shortest route through brute-force comparison and manage to find out the total distance taken.
+- The locations in the city are able to determine the shortest route through brute-force comparison and find the total distance.
 
 - **The system outputs:**
-- The most economical route and its selected total distance.
+- The most economical route and its total distance.
 
 ---
 
@@ -29,11 +29,12 @@
 
 ### Adjacency Matrix:
 
-- Serves the purpose of bridging the distance between measurement for the cities placed in a 2D array in which, matrix[i][j]. Represents the distance for city i from city j.
+- Represents the distance for city i from city j.
 
 ### Route Generation:
 
 - Start and end cities (Riverside) remain constant, and all permutations of city indices are constructed.
+
 - Ensures that no possible route is left unchecked in a systematic manner.
 
 ### Total Distance Calculation:
@@ -42,7 +43,7 @@
 
 ### Shortest Route Calculation:
 
-- Here, a brute-force approach is used since several liquid substances are compared through their total distance of their routes.
+- Here, a brute-force approach is used and are compared through their total distance.
 
 - The route with the total distance that is shortest from the rest becomes the shortest route.
 
@@ -56,9 +57,11 @@
 
 ### How the program interacts with the user:
 
-- Provides and displays the adjacency matrix and city distances in a comprehensible manner.
-- Lists all combinations of routes between cities, including the distances for each route.
-- Identifies and outputs the shortest route along with the total distance covered.
+- Optionally, displays the adjacency matrix and city distances.
+
+- Lists all combinations of routes between cities, including the distances.
+
+- Displays the shortest route with the total distance.
 
 ### Purpose:
 
@@ -74,15 +77,15 @@
 
 ### Permutations:
 
-- Combinatorial measures are employed to create every possible array of travel routes.
+- Creates array of every possible travel routes.
 
 ### Brute Force Search:
 
-- Determines the shortest route from a number of possible route arrangements.
+- Determines the shortest route.
 
 ### Matrix Operations:
 
-- The use of the adjacency matrix enhances the retrieval and computation of distances. Who has the ability to do these kinds of things?
+- The use of the adjacency matrix allows the retrieval and computation of distances.
 
 ---
 
@@ -90,11 +93,11 @@
 
 1.  **Scalability**:
 
-    - For an increased amount of cities, the brute force method incurs a very high computation cost because of its factorial nature.
+    - For an increased amount of cities, the brute force method incurs a very high computation cost.
 
 2.  **Static Input**:
 
-    - The adjacency matrix is static; the position of the cities and distance between them cannot be entered by the user.
+    - The adjacency matrix is static and the position of the cities and distance between them cannot be entered by the user.
 
 3.  **Real-Time Factors**:
 
@@ -102,7 +105,7 @@
 
 4.  **Optimization Criteria**:
 
-    - Only the distance field is optimized by calculation; time, or cost factors are excluded.
+    - Only the distance field is optimized by calculation. Time, or cost factors are excluded.
 
 5.  **Single Output**:
     - Program only outputs single route even is there are various routes with the lowest units.
@@ -113,7 +116,7 @@
 
 1.  **Scalability**:
 
-    - Make use of better optimization like Dijkstra’s or A\* algorithms to be able to accommodate bigger graphs.
+    - Make use of better optimization like Dijkstra’s or other algorithms to be able to accommodate bigger graphs.
 
 2.  **Dynamic Input**:
 
@@ -124,7 +127,7 @@
     - Make use of APIs or data that consider real time factors like road or traffic conditions.
 
 4.  **multi-criteria Optimization**:
-    - Supplement the program so that it optimizes more than one parameter at the same time, (distance-, cost-, time-) among other factors.
+    - Supplement the program so that it optimizes more than one parameter at the same time among other factors.
 
 ---
 
