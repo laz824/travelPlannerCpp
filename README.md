@@ -20,7 +20,8 @@
 
 - The locations in the city are able to determine the shortest route through brute-force comparison and find the total distance.
 
-- **The system outputs:**
+**The system outputs:**
+
 - The most economical route and its total distance.
 
 ---
