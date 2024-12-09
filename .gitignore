@@ -1,0 +1,9 @@
+# Build and distribution folders
+build/
+dist/
+
+# NetBeans project files
+nbproject/
+
+# Dependency files
+.dep.inc
