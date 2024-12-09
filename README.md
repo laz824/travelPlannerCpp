@@ -101,7 +101,11 @@
     - This program does not take into account real time factors like for instance, the road traffic, or conditions of the roads.
 
 4.  **Optimization Criteria**:
+
     - Only the distance field is optimized by calculation; time, or cost factors are excluded.
+
+5.  **Single Output**:
+    - Program only outputs single route even is there are various routes with the lowest units.
 
 ---
 

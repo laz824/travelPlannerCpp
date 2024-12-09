@@ -1,11 +1,10 @@
-
-
 /************************************************/
 /*       Solar Marketing Travel Planner         */
 /************************************************/
 #include <iostream>
 #include <string>
 #include <climits> // For INT_MAX
+#include <algorithm> // For next_permutation
 using namespace std;
 
 const int NUM_CITIES = 4;
@@ -18,26 +17,25 @@ const int distances[NUM_CITIES][NUM_CITIES] = {
 };
 
 /************************************************/
-/*           Function Prototypes                */
+/*                 Prototypes                   */
 /************************************************/
 void printMatrix();
-void printTrip(int path[], int size);
+void printTripsWithCosts();
 void findShortestPath();
-void findTripVariations();
 
-int main() {t
-    cout << "Welcome to the Solar Marketing Travel Planner\n\n";
+int main() {
+    cout << "Welcome to the Travel Planner!\n\n";
 
-    // Step 1: Print adjacency matrix
-    cout << "Adjacency Matrix (Distances between cities):\n";
+    // Step 1: Show distances
+    cout << "Distance Chart (Cities):\n";
     printMatrix();
 
-    // Step 2: Display trip variations
-    cout << "\nPossible Trip Variations from Riverside:\n";
-    findTripVariations();
+    // Step 2: Show trip options
+    cout << "\nAll Possible Trips from Riverside:\n";
+    printTripsWithCosts();
 
-    // Step 3: Find and display the shortest path
-    cout << "\nCalculating Shortest Path from Riverside...\n";
+    // Step 3: Show shortest trip
+    cout << "\nFinding the Shortest Trip:\n";
     findShortestPath();
 
     return 0;
@@ -56,46 +54,54 @@ void printMatrix() {
     }
 }
 
-// Display all possible trip variations starting from Riverside
-void findTripVariations() {
-    int path[NUM_CITIES] = {0, 1, 2, 3}; // Indices of cities
+// Calculate total distance of a trip
+int calculateTripCost(const int trip[], int size) {
+    int totalCost = 0;
+    for (int i = 0; i < size - 1; i++) {
+        totalCost += distances[trip[i]][trip[i + 1]];
+    }
+    totalCost += distances[trip[size - 1]][trip[0]]; // Return to Riverside
+    return totalCost;
+}
+
+// Show all trips and their distances 
+void printTripsWithCosts() {
+    int trip[NUM_CITIES] = {0, 1, 2, 3}; // Indices of cities
     do {
         cout << "Riverside -> ";
         for (int i = 1; i < NUM_CITIES; i++) {
-            cout << cities[path[i]] << " -> ";
+            cout << cities[trip[i]] << " -> ";
         }
-        cout << "Riverside\n";
-    } while (next_permutation(path + 1, path + NUM_CITIES)); // Fix Riverside at the start
+        cout << "Riverside";
+
+        int cost = calculateTripCost(trip, NUM_CITIES);
+        cout << " | Distance: " << cost << " units\n";
+
+    } while (next_permutation(trip + 1, trip + NUM_CITIES)); // Keep Riverside at the start
 }
 
-// Calculate and display the shortest path
+// Find and show the shortest trip
 void findShortestPath() {
-    int path[NUM_CITIES] = {0, 1, 2, 3};
-    int shortestPath[NUM_CITIES + 1];
+    int trip[NUM_CITIES] = {0, 1, 2, 3};
+    int bestTrip[NUM_CITIES + 1];
     int minCost = INT_MAX;
 
     do {
-        int currentCost = 0;
-        for (int i = 0; i < NUM_CITIES - 1; i++) {
-            currentCost += distances[path[i]][path[i + 1]];
-        }
-        currentCost += distances[path[NUM_CITIES - 1]][path[0]]; // Return to start
-
+        int currentCost = calculateTripCost(trip, NUM_CITIES);
         if (currentCost < minCost) {
             minCost = currentCost;
             for (int i = 0; i < NUM_CITIES; i++) {
-                shortestPath[i] = path[i];
+                bestTrip[i] = trip[i];
             }
-            shortestPath[NUM_CITIES] = path[0]; // Return to start
+            bestTrip[NUM_CITIES] = trip[0]; // Return to Riverside
         }
-    } while (next_permutation(path + 1, path + NUM_CITIES)); // Fix Riverside at the start
+    } while (next_permutation(trip + 1, trip + NUM_CITIES)); // Keep Riverside at the start
 
-    // Display shortest path
-    cout << "Shortest Path: ";
-    for (int i = 0; i <= NUM_CITIES; i++) {
-        cout << cities[shortestPath[i]] << " -> ";
+    // Show the shortest trip
+    cout << "Shortest Trip: Riverside -> ";
+    for (int i = 1; i < NUM_CITIES; i++) {
+        cout << cities[bestTrip[i]] << " -> ";
     }
-    cout << "\nTotal Distance: " << minCost << " units\n";
+    cout << "Riverside\n";
+    cout << "Distance: " << minCost << " units\n";
 }
-
-
